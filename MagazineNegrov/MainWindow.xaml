@@ -1,0 +1,115 @@
+﻿<Window x:Class="MagazineNegrov.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     
+        xmlns:local="clr-namespace:MagazineNegrov"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920" MinHeight="1080" MinWidth="1920" >
+    
+    <Window.Resources>
+        <Style TargetType="TabItem" x:Name="Vkladki">
+            <Setter Property="Background" Value="#FF4CAF50"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+
+        </Style>
+        <Style TargetType="Button" x:Name="Button">
+            <Setter Property="Background" Value="#6AC8F7"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="20,190,20,10"/>
+            <Setter Property="Content" Value="buy"/>
+           
+
+        </Style>
+        <Style TargetType="Image" x:Name="Image">
+            <Setter Property="Margin" Value="300,300,300,300"/>
+
+
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="240*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="240"/>
+            <RowDefinition Height="240*"/>
+            <RowDefinition Height="240*"/>
+            <RowDefinition Height="240*"/>
+            <RowDefinition Height="240*"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.ColumnSpan="8" Grid.RowSpan="5">
+
+
+            <TabItem Header="Заказы" Margin="0" >
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="126.44"/>
+                        <RowDefinition Height="113.56"/>
+                        <RowDefinition Height="240*"/>
+                        <RowDefinition Height="240*"/>
+                        <RowDefinition Height="240*"/>
+                        <RowDefinition Height="240*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Корзина" Margin="0" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="240*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="126.44"/>
+                        <RowDefinition Height="113.56"/>
+                        <RowDefinition Height="240*"/>
+                        <RowDefinition Height="240*"/>
+                        <RowDefinition Height="240*"/>
+                        <RowDefinition Height="240*"/>
+                    </Grid.RowDefinitions>
+                    <DataGrid Grid.RowSpan="4" Grid.ColumnSpan="3">
+                        
+                    </DataGrid>
+                    <TextBlock Grid.Column="3" Grid.ColumnSpan="2" Text="{Binding Balance, StringFormat='Текущий баланс: {0} ₽ '}" />
+                    
+
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <Frame x:Name="xzlol" Grid.Row="0" Grid.ColumnSpan="10" Grid.RowSpan="10" />
+
+
+    </Grid>
+</Window>
