@@ -1,0 +1,60 @@
+﻿<Window x:Class="MagazineNegrov.Korzina"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MagazineNegrov"
+        mc:Ignorable="d"
+        Title="Korzina" Height="450" Width="800">
+    <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="выйти" Grid.Column="8" Grid.Row="5" Margin="20" Click="Button_Click"/>
+      
+        <ListView Name="tovars" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="4" Loaded="tovars_Loaded">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="400">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition Height="310"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition  Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Image  Grid.Row="1" Margin="5" Width="400" HorizontalAlignment="Center" Stretch="UniformToFill">
+                            <Image.Source>
+                                <Binding Path="image">
+                                    <Binding.TargetNullValue>
+                                        <Image Source="/Image/HogRider.jpg"/>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+
+                        <TextBlock Name ="NameTovars" Text="{Binding Name}" TextAlignment="Center" VerticalAlignment="Center"  Width="390"  FontSize="26" />
+                        <TextBlock Name ="NameCost" Text="{Binding  Cost}"  Grid.Row="3" FontSize="26"   />
+                        <TextBlock  Name ="NameOpisanie" Text="{Binding  Opisanie}" Grid.Row="2"  FontSize="26" Margin="5,5,5,15" HorizontalAlignment="Center"/>
+                        <Button Name="buy" Content="BUY" Grid.Row="3"   Margin="200,5,5,1" Click="buy_Click"  />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>

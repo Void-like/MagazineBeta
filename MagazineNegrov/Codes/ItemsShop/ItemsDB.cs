@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Microsoft.Win32;
+using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace MagazineNegrov.Codes.ItemsShop
 {
@@ -43,5 +46,25 @@ namespace MagazineNegrov.Codes.ItemsShop
 
 
         }
+        public static void SigmaADD(string name, string cost, string opisanie, Items CreateItem, BitmapImage img)
+        {
+
+            CreateItem.Name = name;
+            CreateItem.Cost = cost;
+            CreateItem.Opisanie = opisanie;
+            CreateItem.ID = ItemsDB.ItemsList.Count;
+            CreateItem.image = img;
+
+            if (CreateItem == null)
+            {
+                MessageBox.Show("ТЫ ЕБИК?");
+            }
+            else
+            {
+                ItemsDB.AddItem(CreateItem);
+            }
+        }
+       
     }
 }
+

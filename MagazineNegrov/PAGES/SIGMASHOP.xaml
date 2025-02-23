@@ -9,6 +9,56 @@
       Title="SIGMASHOP">
 
     <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="выйти" Grid.Column="8" Grid.Row="5" Click="Button_Click" Margin="20"/>
+        <Button Content="корziна" Grid.Column="8" Grid.Row="1" Click="OpenKorzina" Margin="20" />
+        <ListView Name="tovars" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="4" Loaded="tovars_Loaded">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="20" Width="400">
+                                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition Height="310"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition  Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Image  Grid.Row="1" Margin="5" Width="400" HorizontalAlignment="Center" Stretch="UniformToFill">
+                            <Image.Source>
+                                <Binding Path="image">
+                                    <Binding.TargetNullValue>
+                                        <Image Source="/Image/HogRider.jpg"/>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                      
+                        <TextBlock Name ="NameTovars" Text="{Binding Name}" TextAlignment="Center" VerticalAlignment="Center"  Width="390"  FontSize="26" />
+                        <TextBlock Name ="NameCost" Text="{Binding  Cost}"  Grid.Row="3" FontSize="26"   />
+                        <TextBlock  Name ="NameOpisanie" Text="{Binding  Opisanie}" Grid.Row="2"  FontSize="26" Margin="5,5,5,15" HorizontalAlignment="Center"/>
+                        <Button Name="ADDTOKORZINA" Content="BUY" Grid.Row="3"   Margin="200,5,5,1" Click="ADDTOKORZINA_Click"  />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+            <Frame x:Name="xzlol" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="8" Loaded="xzlol_Loaded"  />
         
     </Grid>
 </Page>

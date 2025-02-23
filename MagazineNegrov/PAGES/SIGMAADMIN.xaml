@@ -13,7 +13,7 @@
     
     </Style>
       </Page.Resources>
-    <Grid Background="DarkRed">
+    <Grid Background="#9FBFA3">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -39,8 +39,14 @@
         <TextBlock Text="Oписание"  Grid.Row="3" Grid.Column="0"  />
         <TextBox Name="OpisanieBox"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="1" Margin="1,20,1,30"/>
         <TextBlock Text="Изображение"  Grid.Row="4" Grid.Column="0"  />
-        <Button Name="Кнопка" Grid.Row="4" Grid.Column="2"  Margin="1,20,1,30"  Content="Create" Click="Кнопка_Click"/>
-        <DataGrid Name ="TovariListik" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3"  Loaded="DataGrid_Loaded"  AutoGenerateColumns="True" IsReadOnly="True" >
-        </DataGrid>
+        <Button Name="Загрузить" Grid.Row="4" Grid.Column="0"  Margin="1,20,1,30" Content="Загрузить" Click="Загрузить_Click"   />
+        <Button Name="Кнопка" Grid.Row="4" Grid.Column="2"  Margin="1,20,1,30"  Content="Создать" Click="Кнопка_Click"/>
+        <DataGrid Name ="TovariListik" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="3"  Loaded="TovariListik_Loaded"  AutoGenerateColumns="True" IsReadOnly="True" />
+
+        <Button Name="КнопкаСписокТоваров" Grid.Row="5" Grid.Column="7"  Margin="1,20,1,30"  Content="выйти" Click="КнопкаСписокТоваров_Click"/>
+        <Image Name="tiDAYN" Grid.Row="5" Source="/Image/HogRider.jpg" />
+        <Frame x:Name="xzlol" Grid.Row="0" Grid.ColumnSpan="8" Grid.RowSpan="8"   />
+    
+   
     </Grid>
 </Page>
